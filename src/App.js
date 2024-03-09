@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import Blog from "./components//Blog.js";
+import Student from "./components/classes/Student.js";
+import User from "./components/classes/User.js";
+import Blogpl from "./components/Blogpl.js";
+import "./App.css";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import Datac from "./components/Datac.js";
+import Post from "./components/classes/Post.js";
+import { useState } from "react";
+import PostinDetail from "./components/Postindetail.jsx";
 
 function App() {
+  const student = new Student();
+  student.parseData();
+  const studentsData = student.getStudents();
+  const data = new Datac();
+  const users = data.getUsers();
+  const posts = data.getPosts();
+  // console.log(data);
+  // const post = new Post();
+  // const postdata = post.getPosts();
+  // console.log("In App.js");
+  // console.log(posts);
+  const [selectedSection, setSelectedSection] = React.useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Main page">
+      <BrowserRouter>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <Blog
+                data={data}
+                selectedSection={selectedSection}
+                setSelectedSection={setSelectedSection}
+              />
+            }
+          />
+          <Route exact path="logined" Component={Blogpl} />
+          <Route exact path="logined" Component={PostinDetail} />
+        </Routes>
+      </BrowserRouter>
+      {/* <Blog /> */}
     </div>
   );
 }
