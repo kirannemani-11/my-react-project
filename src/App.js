@@ -4,7 +4,7 @@ import Student from "./components/classes/Student.js";
 import User from "./components/classes/User.js";
 import Blogpl from "./components/Blogpl.js";
 import "./App.css";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Datac from "./components/Datac.js";
 import Post from "./components/classes/Post.js";
 import { useState } from "react";
@@ -29,7 +29,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            exact
             path="/"
             element={
               <Blog
@@ -39,8 +38,8 @@ function App() {
               />
             }
           />
-          <Route exact path="logined" Component={Blogpl} />
-          <Route exact path="logined" Component={PostinDetail} />
+          <Route path="/logined" element={<Blogpl />} />
+          <Route path="/post/:postId" element={<PostinDetail />} />
         </Routes>
       </BrowserRouter>
       {/* <Blog /> */}
