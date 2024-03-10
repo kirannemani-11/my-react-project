@@ -12,7 +12,7 @@ function PostinDetail(props) {
   const { body, status, title, topic } = posts?.find((e) => e.id == postId);
 
   const [reply, setReply] = useState("");
-  const login = localStorage.getItem("loggedIn");
+  const loggedIn = localStorage.getItem("loggedIn");
   
   const handleClick = () => {
     const name = localStorage.getItem("userName");
@@ -54,30 +54,37 @@ function PostinDetail(props) {
       <p style={{ fontSize: "16px", lineHeight: "1.6", marginBottom: "20px" }}>
         {body}
       </p>
-      <TextField
-        label="Enter reply"
-        variant="outlined"
-        fullWidth
-        value={reply}
-        onChange={(e) => setReply(e.target.value)}
-        style={{ marginBottom: "10px" }}
-      />
-       <Button
-           style={{
-             backgroundColor: "#4caf50",
-             color: "white",
-             borderRadius: "5px",
-             padding: "10px 20px",
-             fontSize: "16px",
-             fontWeight: "bold",
-             border: "none",
-             cursor: "pointer",
-             textDecoration: "none",
-           }}
-           onClick={handleClick}
-         >
-           Add a reply
-        </Button>
+      {loggedIn ? (
+  <>
+    <TextField
+      label="Enter reply"
+      variant="outlined"
+      fullWidth
+      value={reply}
+      onChange={(e) => setReply(e.target.value)}
+      style={{ marginBottom: "10px" }}
+    />
+    <Button
+      style={{
+        backgroundColor: "#4caf50",
+        color: "white",
+        borderRadius: "5px",
+        padding: "10px 20px",
+        fontSize: "16px",
+        fontWeight: "bold",
+        border: "none",
+        cursor: "pointer",
+        textDecoration: "none",
+      }}
+      onClick={handleClick}
+          >
+            Add a reply
+          </Button>
+        </>
+      ) : (
+        <></>
+      )}
+
       <h2 style={{ fontSize: "20px", marginBottom: "10px" }}>Reply Section</h2>
       <div
         style={{
