@@ -27,7 +27,8 @@ const defaultTheme = createTheme();
 export default function Blog(props) {
   const { selectedSection, setSelectedSection, data } = props;
   const posts = data.getPosts();
-
+  const users = data.getUsers();
+  console.log(users);
   const filteredposts = data.getPostsbytopic(selectedSection);
 
   // console.log("1" + selectedSection + "working");
@@ -37,6 +38,7 @@ export default function Blog(props) {
       <Container maxWidth="lg">
         <Header
           title="Blog"
+          users={users}
           sections={sections}
           selectedSection={selectedSection}
           setSelectedSection={setSelectedSection}

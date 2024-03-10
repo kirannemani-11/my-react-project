@@ -135,7 +135,7 @@ function Header(props) {
               p: 4,
             }}
           >
-            <Login handleClose={handleClose} />
+            <Login users={props.users} handleClose={handleClose} />
           </Box>
         </Modal>
       </Toolbar>
