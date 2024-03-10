@@ -2,12 +2,13 @@ import React from "react";
 import Data from "../../Postsdata.json";
 
 class Post {
-  constructor(id, title, body, author, topic) {
+  constructor(id, title, body, author, topic, comments) {
     this.id = id;
     this.title = title;
     this.body = body;
     this.status = author;
     this.topic = topic;
+    this.comments = comments;
   }
 
   parseData = async () => {
@@ -25,7 +26,8 @@ class Post {
           Data[i].title,
           Data[i].body,
           Data[i].author,
-          Data[i].topic
+          Data[i].topic,
+          Data[i].comments
         )
       );
     }
@@ -42,7 +44,8 @@ class Post {
             Data[i].title,
             Data[i].body,
             Data[i].author,
-            Data[i].topic
+            Data[i].topic,
+            Data[i].comments
           )
         );
       }

@@ -19,14 +19,20 @@ function Header(props) {
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
+  const [type, setUserType] = useState("");
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
     const loggedInState = localStorage.getItem("loggedIn");
     const userNameStored = localStorage.getItem("userName");
+    const status1 = localStorage.getItem("status");
+    const type2 = localStorage.getItem("type");
 
     if (loggedInState === "true" && userNameStored) {
       setLoggedIn(true);
       setUserName(userNameStored);
+      setUserType(type2);
+      setStatus(status1);
     }
   }, [open]);
 
@@ -35,6 +41,8 @@ function Header(props) {
     setLoggedIn(false);
     localStorage.removeItem("loggedIn");
     localStorage.removeItem("userName");
+    localStorage.removeItem("status");
+    localStorage.removeItem("type");
   };
 
   const handleOpen = () => {
@@ -65,6 +73,14 @@ function Header(props) {
         ) : (
           <></>
         )}
+        {type == "Moderator" ? (
+          <Button size="small" onClick={handlecreatebutton}>
+            Delete a post
+          </Button>
+        ) : (
+          <></>
+        )}
+
         <Typography
           component="h2"
           variant="h5"
@@ -87,6 +103,7 @@ function Header(props) {
         ) : (
           <Button onClick={handleOpen}>Sign in</Button>
         )}
+
         <Modal
           open={open}
           onClose={handleClose}

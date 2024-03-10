@@ -17,7 +17,7 @@ function App() {
   const data = new Datac();
   const users = data.getUsers();
   const posts = data.getPosts();
-  // console.log(data);
+  // console.log(posts);
   // const post = new Post();
   // const postdata = post.getPosts();
   // console.log("In App.js");
@@ -43,10 +43,7 @@ function App() {
             }
           />
 
-          <Route
-            path="/post/:postId"
-            element={<PostinDetail posts={posts} />}
-          />
+          <Route path="/post/:postId" element={<PostinDetail data={data} />} />
           <Route
             path="/logined/createpost"
             element={<CreatePost data={data} />}

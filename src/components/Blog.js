@@ -30,7 +30,7 @@ export default function Blog(props) {
 
   const filteredposts = data.getPostsbytopic(selectedSection);
 
-  console.log("1" + selectedSection + "working");
+  // console.log("1" + selectedSection + "working");
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />

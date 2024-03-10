@@ -4,42 +4,114 @@
         "title": "Maximizing Academic Resources for Student Success",
         "body": "Navigating academic resources can greatly enhance your college experience and academic success. Universities offer a plethora of resources such as libraries, tutoring centers, academic advisors, and online databases. These resources can assist students in research, writing, studying for exams, and overall academic support. Taking advantage of these resources not only improves your grades but also fosters personal and intellectual growth.",
         "author": "Emily Johnson",
-        "topic": "Academic Resources"
+        "topic": "Academic Resources",
+        "comments": [
+          {
+            "id": 1,
+            "text": "This post provides valuable insights into maximizing academic resources. Thanks for sharing!",
+            "author": "John Doe"
+          },
+          {
+            "id": 2,
+            "text": "I found the tips on navigating academic databases particularly helpful. Great post!",
+            "author": "Jane Smith"
+          }
+        ]
     },
     {
         "id": 4,
         "title": "Utilizing Career Services to Jumpstart Your Career",
         "body": "Career services departments in universities provide invaluable assistance to students and alumni in career exploration, job searching, resume building, interview preparation, and networking. By utilizing career services, students can gain access to internships, co-op opportunities, job fairs, and workshops aimed at enhancing their professional skills and marketability in the workforce. Building a relationship with career advisors can pave the way for a successful transition from academia to the professional world.",
         "author": "Michael Anderson",
-        "topic": "Career Services"
+        "topic": "Career Services",
+        "comments": [
+          {
+            "id": 1,
+            "text": "This post provides valuable insights into maximizing academic resources. Thanks for sharing!",
+            "author": "John Doe"
+          },
+          {
+            "id": 2,
+            "text": "I found the tips on navigating academic databases particularly helpful. Great post!",
+            "author": "Jane Smith"
+          }
+        ]
     },
     {
         "id": 5,
         "title": "Exploring the Heart of Campus: A Guide for New Students",
         "body": "The campus is more than just a physical location; it's a hub of activity, culture, and learning. As a new student, familiarizing yourself with campus landmarks, facilities, and resources is essential for a smooth transition to college life. Take advantage of campus tours, orientation programs, and maps to navigate the campus effectively. Additionally, immerse yourself in campus events, clubs, and organizations to forge connections with peers and make the most of your college experience.",
         "author": "Sarah Thompson",
-        "topic": "Campus"
+        "topic": "Campus",
+        "comments": [
+          {
+            "id": 1,
+            "text": "This post provides valuable insights into maximizing academic resources. Thanks for sharing!",
+            "author": "John Doe"
+          },
+          {
+            "id": 2,
+            "text": "I found the tips on navigating academic databases particularly helpful. Great post!",
+            "author": "Jane Smith"
+          }
+        ]
     },
     {
         "id": 6,
         "title": "Mastering Research Skills: A Guide to Academic Databases",
         "body": "Navigating academic databases is a crucial skill for students conducting research. These databases offer access to a vast array of scholarly articles, journals, and publications across various disciplines. Learning how to effectively search, filter, and cite sources from academic databases can greatly enhance the quality and credibility of your research papers and projects.",
         "author": "Alexandra Lee",
-        "topic": "Academic Resources"
+        "topic": "Academic Resources",
+        "comments": [
+          {
+            "id": 1,
+            "text": "This post provides valuable insights into maximizing academic resources. Thanks for sharing!",
+            "author": "John Doe"
+          },
+          {
+            "id": 2,
+            "text": "I found the tips on navigating academic databases particularly helpful. Great post!",
+            "author": "Jane Smith"
+          }
+        ]
     },
     {
         "id": 7,
         "title": "Crafting a Standout Resume: Tips from Career Services Experts",
         "body": "Your resume is often the first impression you make on potential employers, so it's essential to make it stand out. Career services professionals can provide valuable insights and guidance on resume formatting, content, and customization for specific industries or job opportunities. By crafting a compelling resume that highlights your skills, experiences, and accomplishments, you can increase your chances of landing interviews and securing your dream job.",
         "author": "Daniel Carter",
-        "topic": "Career Services"
+        "topic": "Career Services",
+        "comments": [
+          {
+            "id": 1,
+            "text": "This post provides valuable insights into maximizing academic resources. Thanks for sharing!",
+            "author": "John Doe"
+          },
+          {
+            "id": 2,
+            "text": "I found the tips on navigating academic databases particularly helpful. Great post!",
+            "author": "Jane Smith"
+          }
+        ]
       },
       {
         "id": 8,
         "title": "Embracing Diversity on Campus: Celebrating Multiculturalism",
         "body": "College campuses are vibrant melting pots of cultures, backgrounds, and perspectives. Embracing diversity fosters a sense of inclusivity, empathy, and understanding among students, faculty, and staff. Participating in multicultural events, student organizations, and cultural exchange programs enriches the campus community and promotes intercultural dialogue and collaboration.",
         "author": "Sophia Ramirez",
-        "topic": "Campus"
+        "topic": "Campus",
+        "comments": [
+          {
+            "id": 1,
+            "text": "This post provides valuable insights into maximizing academic resources. Thanks for sharing!",
+            "author": "John Doe"
+          },
+          {
+            "id": 2,
+            "text": "I found the tips on navigating academic databases particularly helpful. Great post!",
+            "author": "Jane Smith"
+          }
+        ]
       },
       {
         "id": 9,

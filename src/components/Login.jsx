@@ -66,6 +66,8 @@ export default function SignInSide(props) {
           setLoggedIn(true);
           localStorage.setItem("loggedIn", true);
           localStorage.setItem("userName", users[i]?.name);
+          localStorage.setItem("type", users[i].type);
+          localStorage.setItem("status", users[i].status);
           props.handleClose();
         }
       }

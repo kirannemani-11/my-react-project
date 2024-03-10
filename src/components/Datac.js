@@ -37,7 +37,8 @@ class Datac {
             this.state.posts[i].title,
             this.state.posts[i].body,
             this.state.posts[i].author,
-            this.state.posts[i].topic
+            this.state.posts[i].topic,
+            this.state.posts[i].comments
           )
         );
       }
@@ -49,6 +50,13 @@ class Datac {
       new Post(post.id, post.title, post.body, post.author, post.topic)
     );
     console.log("post array updated");
+  };
+  addComment = (comment) => {
+    for (let i = 0; i < this.state.posts.length; i++) {
+      if (this.state.posts[i].id == comment.postId) {
+        this.state.posts[i].comments.push(comment);
+      }
+    }
   };
 }
 
