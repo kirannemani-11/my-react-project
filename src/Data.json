@@ -4,7 +4,7 @@
       "name": "Alice",
       "email": "alice@example.com",
       "status": "active",
-      "type": "Moderator",
+      "type": "Administrator",
       "password": "GG"
     },
     {

@@ -65,7 +65,9 @@ function Header(props) {
   const handledeletepost = () => {
     navigate("/deletpost");
   };
-  const handledisableuser = () => {};
+  const handledisableuser = () => {
+    navigate("/disableuser");
+  };
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
@@ -76,7 +78,7 @@ function Header(props) {
         ) : (
           <></>
         )}
-        {type == "Moderator" ? (
+        {type == "Moderator" || type == "Administrator" ? (
           <Button size="small" onClick={handledeletepost}>
             Delete a post
           </Button>
@@ -85,7 +87,7 @@ function Header(props) {
         )}
         {type == "Administrator" ? (
           <Button size="small" onClick={handledisableuser}>
-            Disable a user
+            Disable an user
           </Button>
         ) : (
           <></>

@@ -64,6 +64,21 @@ class Datac {
       }
     }
   };
+  toggleUserStatus = (userId) => {
+    const { users } = this.state;
+    const updatedUsers = users.map((user) => {
+      if (user.id === userId) {
+        return {
+          ...user,
+          status: user.status === "active" ? "inactive" : "active",
+        };
+      }
+      return user;
+    });
+    this.state.users = updatedUsers;
+    // console.log("User status updated" + updatedUsers);
+    return this.state.users;
+  };
 }
 
 export default Datac;

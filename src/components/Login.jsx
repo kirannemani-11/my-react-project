@@ -58,7 +58,7 @@ export default function SignInSide(props) {
     const email = data.get("email");
     const password = data.get("password");
     for (let i = 0; i < users.length; i++) {
-      if (users[i].email == email && users[i].password) {
+      if (users[i].email == email && users[i].password && users[i].status == "active") {
         console.log(users[i].email + " " + users[i].type + "found");
 
         if (users[i].name) {

@@ -16,6 +16,7 @@ import { useState } from "react";
 import PostinDetail from "./components/Postindetail.jsx";
 import CreatePost from "./components/Creatingpost.jsx";
 import DeletePost from "./components/DeletePost.js";
+import DisableUser from "./components/DisableUser.js";
 
 function App() {
   const student = new Student();
@@ -65,6 +66,7 @@ function App() {
             path="/logined/createpost"
             element={<CreatePost data={data} />}
           />
+          <Route path="/disableuser" element={<DisableUser data={data} />} />
         </Routes>
       </BrowserRouter>
       {/* <Blog /> */}
