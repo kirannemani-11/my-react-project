@@ -80,7 +80,13 @@ function Header(props) {
         ) : (
           <></>
         )}
-
+        {type == "Administrator" ? (
+          <Button size="small" onClick={handlecreatebutton}>
+            Disable a user
+          </Button>
+        ) : (
+          <></>
+        )}
         <Typography
           component="h2"
           variant="h5"
