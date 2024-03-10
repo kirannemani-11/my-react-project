@@ -4,11 +4,12 @@ import Student from "./components/classes/Student.js";
 import User from "./components/classes/User.js";
 import Blogpl from "./components/Blogpl.js";
 import "./App.css";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Datac from "./components/Datac.js";
 import Post from "./components/classes/Post.js";
 import { useState } from "react";
 import PostinDetail from "./components/Postindetail.jsx";
+import CreatePost from "./components/Creatingpost.jsx";
 
 function App() {
   const student = new Student();
@@ -22,6 +23,9 @@ function App() {
   // const postdata = post.getPosts();
   // console.log("In App.js");
   // console.log(posts);
+
+  // data.addPost(posts[0]);
+
   const [selectedSection, setSelectedSection] = React.useState("");
 
   return (
@@ -29,6 +33,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
+            exact
             path="/"
             element={
               <Blog
@@ -38,8 +43,22 @@ function App() {
               />
             }
           />
-          <Route path="/logined" element={<Blogpl />} />
+          <Route
+            exact
+            path="logined"
+            element={
+              <Blogpl
+                data={data}
+                selectedSection={selectedSection}
+                setSelectedSection={setSelectedSection}
+              />
+            }
+          />
           <Route path="/post/:postId" element={<PostinDetail />} />
+          <Route
+            path="/logined/createpost"
+            element={<CreatePost data={data} />}
+          />
         </Routes>
       </BrowserRouter>
       {/* <Blog /> */}

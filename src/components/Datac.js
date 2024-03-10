@@ -44,6 +44,12 @@ class Datac {
     }
     return fp;
   };
+  addPost = (post) => {
+    this.state.posts.push(
+      new Post(post.id, post.title, post.body, post.author, post.topic)
+    );
+    console.log("post array updated");
+  };
 }
 
 export default Datac;

@@ -7,16 +7,16 @@ import SearchIcon from "@mui/icons-material/Search";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import { Box, Modal } from "@mui/material";
-import { Style } from "@mui/icons-material";
-import { style } from "@mui/system";
 import Login from "./Login";
 import Icon from "./Icon";
 import { useLocation } from "react-router-dom";
+import CreatePost from "./Creatingpost";
+import { useNavigate } from "react-router-dom";
 
 function Header(props) {
   const location = useLocation();
-  // console.log(location.state.inputData.name);
-  const { sections, title, inputData } = props;
+  const navigate = useNavigate();
+  const { sections, title, setSelectedSection, selectedSection } = props;
   const [open, setOpen] = React.useState(false); // State variable for managing modal open/close
 
   const handleOpen = () => {
@@ -27,15 +27,17 @@ function Header(props) {
     setOpen(false);
   };
 
-  // const inputData = {
-  //   defaultValue: 'name of user',
-  //   ariaLabel: { 'aria-label': 'Custom description' }
-  // };
+  const handleSectionClick = (section) => {
+    setSelectedSection(section.title);
+  };
 
+  const handlecreatebutton = () =>{
+    navigate("/logined/createpost");
+  }
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Button size="small">Subscribe</Button>
+        <Button size="small" onClick={handlecreatebutton}>Create Post</Button>
         <Typography
           component="h2"
           variant="h5"
@@ -80,16 +82,16 @@ function Header(props) {
         sx={{ justifyContent: "space-between", overflowX: "auto" }}
       >
         {sections.map((section) => (
-          <Link
+          <Button
+            key={section.title}
+            onClick={() => setSelectedSection(section.title)}
             color="inherit"
             noWrap
-            key={section.title}
             variant="body2"
-            href={section.url}
-            sx={{ p: 1, flexShrink: 0 }}
+            sx={{ p: 1, flexShrink: 0, fontSize: "0.65rem" }}
           >
             {section.title}
-          </Link>
+          </Button>
         ))}
       </Toolbar>
     </React.Fragment>
@@ -104,6 +106,7 @@ Header.propTypes = {
     })
   ).isRequired,
   title: PropTypes.string.isRequired,
+  onSectionSelect: PropTypes.func.isRequired,
 };
 
 export default Header;

@@ -34,8 +34,8 @@ const sections = [
 ];
 
 const defaultTheme = createTheme();
-const data = new Datac();
-const featuredPosts = data.getPosts();
+// const data = new Datac();
+// const featuredPosts = data.getPosts();
 
 export default function Blog(props) {
   const { selectedSection, setSelectedSection, data } = props;
