@@ -51,14 +51,12 @@ export default function SignInSide(props) {
       email: data.get("email"),
       password: data.get("password"),
     });
-    const user = new User();
-    const users = user.getUsers();
-    const student = new Student();
-    const students = student.getStudents();
+    const users = props.users;
     const email = data.get("email");
     const password = data.get("password");
+
     for (let i = 0; i < users.length; i++) {
-      if (users[i].email == email && users[i].password && users[i].status == "active") {
+      if (users[i].email == email && users[i].password == password && users[i].status == "active") {
         console.log(users[i].email + " " + users[i].type + "found");
 
         if (users[i].name) {
@@ -72,6 +70,11 @@ export default function SignInSide(props) {
         }
       }
     }
+    const s = localStorage.getItem("loggedIn");
+    // console.log(s);
+     if(s == false || s == null) {alert("User credentials invalid or User is diabled");}
+    // console.log(loggedIn);
+    // if(loggedIn == false) {alert("GG");}
     // console.log();
   };
 

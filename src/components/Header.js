@@ -39,6 +39,8 @@ function Header(props) {
   const handleLogout = () => {
     setUserName("");
     setLoggedIn(false);
+    setUserType("");
+    setStatus("");
     localStorage.removeItem("loggedIn");
     localStorage.removeItem("userName");
     localStorage.removeItem("status");
