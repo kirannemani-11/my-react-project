@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
+
 import PropTypes from "prop-types";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
@@ -7,11 +8,34 @@ import SearchIcon from "@mui/icons-material/Search";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import { Box, Modal } from "@mui/material";
+import Icon from "./Icon";
 import Login from "./Login";
+
+import { useNavigate } from "react-router-dom";
 
 function Header(props) {
   const { sections, title, setSelectedSection, selectedSection } = props;
   const [open, setOpen] = React.useState(false); // State variable for managing modal open/close
+
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    const loggedInState = localStorage.getItem("loggedIn");
+    const userNameStored = localStorage.getItem("userName");
+
+    if (loggedInState === "true" && userNameStored) {
+      setLoggedIn(true);
+      setUserName(userNameStored);
+    }
+  }, [open]);
+
+  const handleLogout = () => {
+    setUserName("");
+    setLoggedIn(false);
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("userName");
+  };
 
   const handleOpen = () => {
     setOpen(true);
@@ -25,10 +49,22 @@ function Header(props) {
     setSelectedSection(section.title);
   };
 
+  const navigate = useNavigate();
+
+  const handlecreatebutton = () => {
+    navigate("/logined/createpost");
+  };
+
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: "divider" }}>
-        <Button size="small">Subscribe</Button>
+        {loggedIn ? (
+          <Button size="small" onClick={handlecreatebutton}>
+            Create Post
+          </Button>
+        ) : (
+          <></>
+        )}
         <Typography
           component="h2"
           variant="h5"
@@ -42,7 +78,15 @@ function Header(props) {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        <Button onClick={handleOpen}>Sign in</Button>
+
+        {loggedIn ? (
+          <>
+            <Icon inputData={userName} />
+            <Button onClick={handleLogout}>Logout</Button>
+          </>
+        ) : (
+          <Button onClick={handleOpen}>Sign in</Button>
+        )}
         <Modal
           open={open}
           onClose={handleClose}
@@ -63,7 +107,7 @@ function Header(props) {
               p: 4,
             }}
           >
-            <Login />
+            <Login handleClose={handleClose} />
           </Box>
         </Modal>
       </Toolbar>

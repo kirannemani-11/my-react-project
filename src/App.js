@@ -2,7 +2,6 @@ import * as React from "react";
 import Blog from "./components//Blog.js";
 import Student from "./components/classes/Student.js";
 import User from "./components/classes/User.js";
-import Blogpl from "./components/Blogpl.js";
 import "./App.css";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Datac from "./components/Datac.js";
@@ -43,18 +42,11 @@ function App() {
               />
             }
           />
+
           <Route
-            exact
-            path="logined"
-            element={
-              <Blogpl
-                data={data}
-                selectedSection={selectedSection}
-                setSelectedSection={setSelectedSection}
-              />
-            }
+            path="/post/:postId"
+            element={<PostinDetail posts={posts} />}
           />
-          <Route path="/post/:postId" element={<PostinDetail />} />
           <Route
             path="/logined/createpost"
             element={<CreatePost data={data} />}

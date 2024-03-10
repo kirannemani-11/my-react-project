@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreatingPost(props) {
   const navigate = useNavigate();
-  const {data, selectedSection, setSelectedSection} = props;
+  const { data } = props;
   const [post, setPost] = useState({
-    id: '',
-    title: '',
-    body: '',
-    author: '',
-    topic: ''
+    id: "",
+    title: "",
+    body: "",
+    author: "",
+    topic: "",
   });
 
   const handleChange = (event) => {
@@ -28,15 +28,27 @@ function CreatingPost(props) {
     //   topic: ''
     // });
     data.addPost(post);
-    navigate("/", {data, selectedSection, setSelectedSection});
+    navigate("/");
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: 'auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Create a New Post</h2>
+    <div
+      style={{
+        maxWidth: "600px",
+        margin: "auto",
+        padding: "20px",
+        border: "1px solid #ccc",
+        borderRadius: "5px",
+      }}
+    >
+      <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+        Create a New Post
+      </h2>
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="id" style={{ display: 'block', marginBottom: '5px' }}>ID:</label>
+        <div style={{ marginBottom: "15px" }}>
+          <label htmlFor="id" style={{ display: "block", marginBottom: "5px" }}>
+            ID:
+          </label>
           <input
             type="number"
             id="id"
@@ -44,11 +56,21 @@ function CreatingPost(props) {
             value={post.id}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '3px', border: '1px solid #ccc' }}
+            style={{
+              width: "100%",
+              padding: "8px",
+              borderRadius: "3px",
+              border: "1px solid #ccc",
+            }}
           />
         </div>
-        <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="title" style={{ display: 'block', marginBottom: '5px' }}>Title:</label>
+        <div style={{ marginBottom: "15px" }}>
+          <label
+            htmlFor="title"
+            style={{ display: "block", marginBottom: "5px" }}
+          >
+            Title:
+          </label>
           <input
             type="text"
             id="title"
@@ -56,22 +78,42 @@ function CreatingPost(props) {
             value={post.title}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '3px', border: '1px solid #ccc' }}
+            style={{
+              width: "100%",
+              padding: "8px",
+              borderRadius: "3px",
+              border: "1px solid #ccc",
+            }}
           />
         </div>
-        <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="body" style={{ display: 'block', marginBottom: '5px' }}>Body:</label>
+        <div style={{ marginBottom: "15px" }}>
+          <label
+            htmlFor="body"
+            style={{ display: "block", marginBottom: "5px" }}
+          >
+            Body:
+          </label>
           <textarea
             id="body"
             name="body"
             value={post.body}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '3px', border: '1px solid #ccc' }}
+            style={{
+              width: "100%",
+              padding: "8px",
+              borderRadius: "3px",
+              border: "1px solid #ccc",
+            }}
           ></textarea>
         </div>
-        <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="author" style={{ display: 'block', marginBottom: '5px' }}>Author:</label>
+        <div style={{ marginBottom: "15px" }}>
+          <label
+            htmlFor="author"
+            style={{ display: "block", marginBottom: "5px" }}
+          >
+            Author:
+          </label>
           <input
             type="text"
             id="author"
@@ -79,11 +121,21 @@ function CreatingPost(props) {
             value={post.author}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '3px', border: '1px solid #ccc' }}
+            style={{
+              width: "100%",
+              padding: "8px",
+              borderRadius: "3px",
+              border: "1px solid #ccc",
+            }}
           />
         </div>
-        <div style={{ marginBottom: '15px' }}>
-          <label htmlFor="topic" style={{ display: 'block', marginBottom: '5px' }}>Topic:</label>
+        <div style={{ marginBottom: "15px" }}>
+          <label
+            htmlFor="topic"
+            style={{ display: "block", marginBottom: "5px" }}
+          >
+            Topic:
+          </label>
           <input
             type="text"
             id="topic"
@@ -91,10 +143,27 @@ function CreatingPost(props) {
             value={post.topic}
             onChange={handleChange}
             required
-            style={{ width: '100%', padding: '8px', borderRadius: '3px', border: '1px solid #ccc' }}
+            style={{
+              width: "100%",
+              padding: "8px",
+              borderRadius: "3px",
+              border: "1px solid #ccc",
+            }}
           />
         </div>
-        <button type="submit" style={{ background: '#007bff', color: '#fff', padding: '10px 20px', borderRadius: '3px', border: 'none', cursor: 'pointer' }}>Submit</button>
+        <button
+          type="submit"
+          style={{
+            background: "#007bff",
+            color: "#fff",
+            padding: "10px 20px",
+            borderRadius: "3px",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          Submit
+        </button>
       </form>
     </div>
   );

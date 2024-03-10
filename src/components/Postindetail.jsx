@@ -2,10 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import Datac from "./Datac";
 
-function PostinDetail() {
+function PostinDetail(props) {
   const { postId } = useParams();
-  const data = new Datac();
-  const { body, status, title, topic } = data.state.posts.find(
+
+  const { body, status, title, topic } = props?.posts?.find(
     (e) => e.id == postId
   );
 
