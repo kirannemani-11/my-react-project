@@ -62,7 +62,9 @@ function Header(props) {
   const handlecreatebutton = () => {
     navigate("/logined/createpost");
   };
-  const handledeletepost = () => {};
+  const handledeletepost = () => {
+    navigate("/deletpost");
+  };
   const handledisableuser = () => {};
   return (
     <React.Fragment>

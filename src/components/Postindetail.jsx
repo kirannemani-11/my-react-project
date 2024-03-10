@@ -17,7 +17,7 @@ function PostinDetail(props) {
     const comment = {
       postId,
       author: "Alice",
-      text: reply
+      text: reply,
     };
     data.addComment(comment);
     setReload(!reload); // Toggle the reload state to trigger a re-render
@@ -84,7 +84,7 @@ function PostinDetail(props) {
           marginBottom: "10px",
         }}
       >
-        {comments.map((comment, index) => (
+        {comments?.map((comment, index) => (
           <div key={index} style={{ marginBottom: "10px" }}>
             <p style={{ margin: "0", padding: "5px 0", fontWeight: "bold" }}>
               {comment.text}

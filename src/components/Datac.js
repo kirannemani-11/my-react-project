@@ -24,6 +24,7 @@ class Datac {
   getPosts() {
     return this.state.posts;
   }
+
   getPostsbytopic = (topic) => {
     const fp = [];
     for (let i = 0; i < this.state.posts.length; i++) {
@@ -50,6 +51,11 @@ class Datac {
       new Post(post.id, post.title, post.body, post.author, post.topic)
     );
     console.log("post array updated");
+  };
+
+  deletePost = (postId) => {
+    this.state.posts = this.state.posts.filter((post) => post.id !== postId);
+    console.log("post deleted");
   };
   addComment = (comment) => {
     for (let i = 0; i < this.state.posts.length; i++) {
