@@ -10,6 +10,7 @@ function CreatingPost(props) {
     body: "",
     author: "",
     topic: "",
+    comments: []
   });
 
   const handleChange = (event) => {

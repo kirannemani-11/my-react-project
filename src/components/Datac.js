@@ -48,7 +48,14 @@ class Datac {
   };
   addPost = (post) => {
     this.state.posts.push(
-      new Post(post.id, post.title, post.body, post.author, post.topic)
+      new Post(
+        post.id,
+        post.title,
+        post.body,
+        post.author,
+        post.topic,
+        post.comments
+      )
     );
     console.log("post array updated");
   };

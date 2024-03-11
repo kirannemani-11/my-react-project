@@ -72,7 +72,7 @@ export default function SignInSide(props) {
     }
     const s = localStorage.getItem("loggedIn");
     // console.log(s);
-     if(s == false || s == null) {alert("User credentials invalid or User is diabled");}
+     if(s == false || s == null) {alert("User credentials invalid or User is disabled");}
     // console.log(loggedIn);
     // if(loggedIn == false) {alert("GG");}
     // console.log();

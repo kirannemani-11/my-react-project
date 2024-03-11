@@ -6,8 +6,8 @@ import { Button, TextField } from "@mui/material";
 function PostinDetail(props) {
   const { postId } = useParams();
   const { data } = props;
-  const [reload, setReload] = useState(false); // State variable for triggering re-render
-  const [comments, setComments] = useState([]); // State variable for comments
+  const [reload, setReload] = useState(false); 
+  const [comments, setComments] = useState([]); 
   const posts = data.getPosts();
   const { body, status, title, topic } = posts?.find((e) => e.id == postId);
 
@@ -22,18 +22,17 @@ function PostinDetail(props) {
       text: reply,
     };
     data.addComment(comment);
-    setReload(!reload); // Toggle the reload state to trigger a re-render
+    setReload(!reload); 
   };
 
   useEffect(() => {
-    // Fetch updated data whenever reload state changes
     const updatedPosts = data.getPosts();
     const updatedPost = updatedPosts.find((e) => e.id == postId);
     if (updatedPost) {
       const updatedComments = updatedPost.comments;
       setComments(updatedComments);
     }
-  }, [reload, postId, data]); // Dependency array ensures useEffect runs when reload state changes
+  }, [reload, postId, data]); 
 
   return (
     <div
