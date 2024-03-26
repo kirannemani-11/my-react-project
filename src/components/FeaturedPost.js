@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import PostinDetail from "./Postindetail";
 function FeaturedPost(props) {
   const { post } = props;
+  console.log(post);
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/post/${post.id}`);

@@ -19,18 +19,31 @@ class Post {
 
   getPosts = () => {
     const posts = [];
-    for (let i = 0; i < Data.length; i++) {
-      posts.push(
-        new Post(
-          Data[i].id,
-          Data[i].title,
-          Data[i].body,
-          Data[i].author,
-          Data[i].topic,
-          Data[i].comments
-        )
-      );
-    }
+    fetch("http://localhost:4000/getData", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json()) // Convert the response data to JSON
+      .then((data) => {
+        console.log(data); // Log the response data
+        for (let i = 0; i < data.length; i++) {
+          posts.push(
+            new Post(
+              data[i].id,
+              data[i].title,
+              data[i].body,
+              data[i].author,
+              data[i].topic,
+              data[i].comments
+            )
+          );
+        }
+      })
+      .catch((error) => console.error("Error:", error)); // Catch and log any errors
+
+    // console.log(posts);
     return posts;
   };
 

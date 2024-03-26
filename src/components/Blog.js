@@ -28,9 +28,9 @@ export default function Blog(props) {
   const { selectedSection, setSelectedSection, data } = props;
   const posts = data.getPosts();
   const users = data.getUsers();
-  console.log(users);
+  // console.log(users);
   const filteredposts = data.getPostsbytopic(selectedSection);
-
+  console.log(posts);
   // console.log("1" + selectedSection + "working");
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -46,7 +46,7 @@ export default function Blog(props) {
         <main>
           {/* <MainFeaturedPost post={mainFeaturedPost} /> */}
           <Grid container spacing={4}>
-            {filteredposts.map((post) => (
+            {posts.map((post) => (
               <FeaturedPost key={post.id} post={post} />
             ))}
           </Grid>

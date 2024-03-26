@@ -22,6 +22,7 @@ class Datac {
     return this.state.users;
   }
   getPosts() {
+    console.log("1" + this.state.posts + "calling from DATAC");
     return this.state.posts;
   }
 
